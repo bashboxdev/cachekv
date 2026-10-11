@@ -1,0 +1,14 @@
+# Build output
+/bin/
+/cachekv
+*.exe
+
+# Test and coverage artifacts
+coverage.out
+*.test
+*.prof
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store

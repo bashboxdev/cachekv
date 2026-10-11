@@ -1,0 +1,35 @@
+version: "2"
+
+run:
+  timeout: 5m
+
+linters:
+  default: standard # errcheck, govet, ineffassign, staticcheck, unused
+  enable:
+    - copyloopvar
+    - errorlint # correct use of errors.Is / errors.As and %w
+    - gocritic
+    - gosec # security checks
+    - intrange
+    - misspell
+    - nolintlint # keeps //nolint directives honest
+    - prealloc
+    - revive
+    - unconvert
+    - unparam
+  exclusions:
+    presets:
+      - comments
+      - std-error-handling
+      - common-false-positives
+    rules:
+      - path: _test\.go
+        linters:
+          - gosec
+          - errcheck
+          - unparam
+
+formatters:
+  enable:
+    - gofmt
+    - goimports
